@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+stellar:
+  network:
+    passphrase: 'Test SDF Network ; September 2015' # Testnet passphrase
+    horizon-url: 'https://horizon-testnet.stellar.org'
+  account:
+    # A generated testnet account (Seed) that will act as the "bank's" issuing/source account
+    # Secret Seed (Starts with S)
+    # WARNING: Do not use this in production.
+    secret: 'SCV2TUKV4C5IUZU3625IHOEMVUBJ4K6HVKQJIS7E7KTYX5O2CPOX2Y5F'
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:legacy_db
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
